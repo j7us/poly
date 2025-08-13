@@ -1,0 +1,21 @@
+//Класс родитель
+public abstract class Car {
+ public abstract void speed();
+}
+
+// Дочерний класс
+class Ferrari extend Car {
+
+@Override
+public void speed() {
+System.out.println("Очень быстро");
+}
+}
+
+// Функция в программе, куда может быть передан класс или его наследник.
+// При вызове метода speed() будет использовано динамическое связывание,
+// т.к JVM надо определить какой именно метод будет вызван.
+public void carRacing(Car car) {
+    car.speed();
+}
+
