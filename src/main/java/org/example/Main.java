@@ -15,3 +15,15 @@ public class Main {
         }
     }
 }
+
+class Attr {}
+
+class Test <T extends Attr> {
+    T a;
+
+    public T aaa() {
+        return a;
+    }
+}
+
+class Test2 extends Test<Attr> {}

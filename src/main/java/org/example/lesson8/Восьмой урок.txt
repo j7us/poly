@@ -1,0 +1,48 @@
+class ParentAttr {}
+
+class ChildAttr extend ParentAttr {}
+
+// Ковариантная типизация
+
+class Parent <T extends ParentAttr> {
+    T attr;
+
+    public T getAttr() {
+        return attr;
+    }
+}
+
+// Можно создать
+
+class Child extends Parent<ChildAttr> {}
+
+// Ковариантность в методах
+
+class Parent {
+
+    public ParentAttr getAttr() {
+        return new ParentAttr();
+    }
+}
+
+class Child extends Parent {
+
+    @Override
+    public ChildAttr getAttr() {
+        return new ChildAttr();
+    }
+}
+
+// Контравариантность
+
+class Parent <T super ChildAttr> {
+    T attr;
+
+    public T getAttr() {
+        return attr;
+    }
+}
+
+// Можно создать
+
+class Child extends Parent<ParentAttr> {}
