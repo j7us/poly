@@ -1,0 +1,7 @@
+Существует возможность запретить переопределять метод в java с помощью final
+
+Пример:
+
+public final String getAttr() {
+    return attr;
+}
