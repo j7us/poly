@@ -8,6 +8,8 @@ public abstract class General {
         try {
             result = (E) source;
         } catch (ClassCastException e) {}
+
+        target = result;
     }
 }
 
