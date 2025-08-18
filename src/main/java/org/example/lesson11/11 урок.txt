@@ -1,0 +1,24 @@
+В Java присутствует только множественное наследование интерфейсов, но, если бы было возможно наследование классов,
+то это выглядело бы так.
+
+
+public abstract class General{}
+
+class Any extends General{}
+
+class Phone extends Any{}
+
+class Table extends Any{}
+
+class Void extends Phone, Table {}
+
+
+public void choosePhoneModel() {
+    Phone phone = new Void();
+
+    if (!storageIsEmpty) {
+        phone = getFromStorage();
+    }
+
+    return phone;
+}
