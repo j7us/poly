@@ -9,27 +9,20 @@ public class Main {
 
         B b = new B();
 
-        Class<? extends B> aClass = b.getClass();
-
-        System.out.println(aClass.isAssignableFrom(a.getClass()));
     }
 }
 
-class A {}
+class A {
 
-class B extends A {}
-
-class Attr <T extends A>{
-
-    public void t(List<A> list) {
-        System.out.println(list);
+    public void publicMethod() {
+        System.out.println("publicMethod");
     }
 }
 
-class Test extends Attr<B> {
+class B extends A {
 
     @Override
-    public String toString() {
-        return "Test";
+    public void publicMethod() {
+        super.publicMethod();
     }
 }
