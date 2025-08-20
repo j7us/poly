@@ -23,11 +23,11 @@ class Vector <T extends AdditionPossibility<T>> extends AdditionPossibility<Vect
     }
 
     private Vector<T> sumElements(Vector<T> argument) {
-        T[] newElements = (T[]) Array.newInstance(elements.getClass(), argument.size);
+        T[] newElements = (T[]) Array.newInstance(elements.getClass().getComponentType(), argument.size);
         T[] argumentElements = argument.elements;
 
         for (int i = 0; i < argument.size; i++) {
-            newElements[i] = elements[i].sum(argumentElements[i]);
+            newElements[i] = elements[i] == null ? argumentElements[i] : elements[i].sum(argumentElements[i]);
         }
 
         return new Vector<>(newElements);
